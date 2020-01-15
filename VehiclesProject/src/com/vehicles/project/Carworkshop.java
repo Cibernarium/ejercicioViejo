@@ -30,10 +30,12 @@ public class Carworkshop {
 		System.out.println("Indica la matrícula: ");
 		String plate= "544FJLL";//String plate=sc.nextLine();
 		
-		String numericalPlate=plate.substring(0,3);
-		for(int i=0;i<=numericalPlate.length();i++) {
-			
-		}
+		/*boolean plateOk=  PlateCheck(plate);
+		while(plateOk==false) {
+			System.out.println("Indica la matrícula: ");
+			plate= "544FJLL";//String plate=sc.nextLine();
+			plateOk=  PlateCheck(plate);
+		}*/
 		
 		System.out.println("Indica la marca: ");
 		String brand= "FORD";//String brand=sc.nextLine();
@@ -72,20 +74,65 @@ public class Carworkshop {
 		backWheels.add(rearLeftWheel);
 		backWheels.add(rearRightWheel);
 		
-		for (Wheel element : frontWheels) {
+		try {
+			car1.addWheels(frontWheels, backWheels);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//addWheels(frontWheels,backWheels);
+		
+		
+		/*for (Wheel element : frontWheels) {
 			System.out.println(element.toString());
 		}
 		for (Wheel element : backWheels) {
 			System.out.println(element.toString());
 			
-		}
-}
+		}*/
+	}
 
-	private static boolean isNan(char charAt) {
-		// TODO Auto-generated method stub
-		return false;
-	}		
-		
-		
+
+	
+	/*public static boolean PlateCheck(String plate){
+		boolean output =true;
+		int plateLength=plate.length();
+		if((plateLength!=6)&&(plateLength!=7)){
+			System.out.println("El número de caràcters de la matrícula no és correcte");
+			output=false;
+		}
+		else if(plateLength==6) {
+			for(int i=0;i<5;i++) {
+				if(isNan((plate.charAt(i))) {
+					System.out.println("Els  primers 4 caràcters han de ser números");
+					output=false;		
+				}
+			}	
+			for(int i=4;i<6;i++) {
+				if (!Character.isLetter(plate.charAt(i))) {
+					System.out.println("Els últims 2 carácters han de ser lletres");
+					output=false;
+				}
+			}
+		}
+		else if(plateLength==7) {
+			for(int i=0;i<5;i++) {
+				if(isNan(plate.charAt(i))) {
+					System.out.println("Els  primers 4 caràcters han de ser números");
+					output=false;
+				}
+			}	
+			for(int i=4;i<7;i++) {
+				if (!Character.isLetter(plate.charAt(i))) {
+					System.out.println("Els últims 3 carácters han de ser lletres");
+					output=false;
+				}
+			}
+		}
+	return output;
+	}*/
+	
+
+
 
 }

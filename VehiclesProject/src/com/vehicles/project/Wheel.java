@@ -24,6 +24,26 @@ public class Wheel {
 	public void setDiameter(double diameter) {
 		this.diameter = diameter;
 	}
+	
+	public boolean equals(Object leftWheel) {
+		
+		if(leftWheel instanceof Wheel) {
+			
+		Wheel testWheel=(Wheel)leftWheel;
+		
+			if(this.diameter==testWheel.diameter) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		
+		}
+		else {
+			return false;
+		}
+	}
+	
 
 	@Override
 	public String toString() {
