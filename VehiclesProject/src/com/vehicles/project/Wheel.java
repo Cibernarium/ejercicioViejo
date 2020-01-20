@@ -9,22 +9,27 @@ public class Wheel {
 		this.diameter = diameter;
 	}
 
+
 	public String getBrand() {
 		return brand;
 	}
+
 
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
 
+
 	public double getDiameter() {
 		return diameter;
 	}
 
+
 	public void setDiameter(double diameter) {
 		this.diameter = diameter;
 	}
-	
+
+
 	public boolean equals(Object leftWheel) {
 		
 		if(leftWheel instanceof Wheel) {
@@ -44,11 +49,33 @@ public class Wheel {
 		}
 	}
 	
+public boolean equals2(Object backwheel) {
+		
+		if(backwheel instanceof Wheel) {
+			
+		Wheel testWheel=(Wheel)backwheel;
+		
+			if(this.diameter==testWheel.diameter) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		
+		}
+		else {
+			return false;
+		}
+	}
+
+
 
 	@Override
 	public String toString() {
-		return "Wheel [brand=" + this.getBrand() + ", diameter=" + this.getDiameter() + "]";
+		return "Wheel [brand=" + brand + ", diameter=" + diameter + "]";
 	}
+	
+
 	
 	
 }
